@@ -6,7 +6,7 @@ from advent.api import AdventAPI
 
 
 @click.group()
-@click.option("--token")
+@click.option("--token", required=True)
 @click.option("--day", "-d")
 @click.option("--year", "-y")
 @click.pass_context
@@ -43,4 +43,4 @@ def run(obj, module, function, test):
 
 
 if __name__ == "__main__":
-    cli()
+    cli(auto_envvar_prefix="ADVENT")
